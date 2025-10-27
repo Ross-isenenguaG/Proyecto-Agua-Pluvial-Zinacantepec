@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Contiene una calculadora para calcular litros de agua fluvial de la lluvia">
+  <meta name="keywords" content="Captacion de agua fluviales, calculadora de aguas pluviales">
+  <meta name="author" content="Dulce y Rosi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagenes/favicon.ico">
+  <title>Calculadora de Captación de Agua</title>
+  <link rel="stylesheet" href="css/styles-calculadora.css">
+</head>
+<body>
+    <header>
+      <div class="titulo">
+        <h1>CALCULADORA DE AGUAS PLUVIALES</h1>
+        <h2>Captacion de agua Zinacantepec</h2>
+      </div>
+        <nav class="navegacion">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="proyecto.html">Mapa Escasez De Agua</a></li>
+          </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="form-container">
+            <div id="form-main">
+                <form id="calc-form">
+                <label for="area">Área del techo (m²):</label>
+                <input type="number" id="area" name="area" required>
+
+                <label for="precipitacion">Precipitación esperada (mm):</label>
+                <input type="number" id="precipitacion" name="precipitacion" required>
+
+                <label for="material">Material del techo:</label>
+                <select id="material" name="material" required>
+                  <option value="">--Seleccione--</option>
+                  <option value="teja">Teja de barro</option>
+                  <option value="lamina">Lámina metálica</option>
+                  <option value="concreto">Concreto</option>
+                </select>
+
+                <label for="eficiencia">Eficiencia del sistema (%):</label>
+                <input type="number" id="eficiencia" name="eficiencia" min="1" max="100" required>
+
+                <label for="presupuesto">Presupuesto para la instalación ($):</label>
+                <input type="number" id="presupuesto" name="presupuesto" min="1" required>
+
+                <div id="errors"></div>
+
+                <button type="submit">Calcular</button>
+                <button type="button" id="limpiar">Limpiar</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="result-panel">
+            <p style="color:var(--muted)">Aquí se mostrarán los resultados una vez que completes el formulario.</p>
+        </div>
+          </div>
+          <div class="chart-wrap" style="display:none;">
+            <h4>Gráfico de usos del agua captada</h4>
+            <canvas id="resultsChart" width="400" height="220"></canvas>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="js/calculadora.js"></script>
+
+    </main>
+    <footer class="footer">
+      <div class="footer-contenido">
+        <h3>Sistema de Captación Pluvial - Zinacantepec</h3>
+        <p>Año 2025  |  Todos los derechos reservados</p>
+      </div>
+    </footer>
+</body>
+</html>
